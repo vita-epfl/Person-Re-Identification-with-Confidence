@@ -15,6 +15,7 @@ from .nasnet import *
 from .inceptionresnetv2 import *
 
 from .siamese_resnet50 import Siamese_Resnet50
+from .resnet_vib import ResNet50_vib
 __model_factory = {
     'resnet50': ResNet50,
     'resnet101': ResNet101,

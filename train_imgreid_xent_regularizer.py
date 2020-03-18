@@ -19,8 +19,7 @@ from torchreid import data_manager
 from torchreid.dataset_loader_custom import ImageDataset
 from torchreid import transforms as T
 from torchreid import models
-from torchreid.losses import CrossEntropyLabelSmooth, DeepSupervision
-from torchried.losses import AngularLabelSmooth, AngleLoss, ConfidencePenalty, JSD_loss
+from torchreid.losses import CrossEntropyLabelSmooth, DeepSupervision, AngularLabelSmooth, AngleLoss, ConfidencePenalty, JSD_loss
 from torchreid.utils.iotools import save_checkpoint, check_isfile
 from torchreid.utils.avgmeter import AverageMeter
 from torchreid.utils.logger import Logger
@@ -226,6 +225,7 @@ def main(args):
             print("Using Label Smoothing")
             criterion = CrossEntropyLabelSmooth(num_classes=dataset.num_train_pids, use_gpu=use_gpu)
         else:
+            print("Using Normal Cross-Entropy")
             criterion = nn.CrossEntropyLoss()
 
         if args.jsd:

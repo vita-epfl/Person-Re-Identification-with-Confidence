@@ -5,14 +5,9 @@ from __future__ import print_function
 from .cross_entropy_loss import CrossEntropyLabelSmooth, AngularLabelSmooth,AdaptiveLabelSmooth,LabelSmooth_sigmoid,AdaptiveLabelSmooth_sigmoid, modifiedBCE
 from .hard_mine_triplet_loss import TripletLoss,SoftTripletLoss
 from .angular_softmax import AngleLoss
-from .mid_loss import MidLoss
-from .center_loss import CenterLoss
-from .ring_loss import RingLoss
 
-from .ring_loss_custom import RingLoss as RingLoss_custom
 from .entropy_loss import ConfidencePenalty
 from .customTripletLoss import TripletLoss_custom,SoftTripletLoss_custom
-from .MI_loss import MI_loss
 from .jsd import JSD_loss
 
 

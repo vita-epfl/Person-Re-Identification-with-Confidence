@@ -11,7 +11,7 @@ import io
 import torch
 from torch.utils.data import Dataset
 
-from .transforms import RandomHorizontalFlip_rot
+from .transforms import RandomHorizontalFlip_custom
 
 import pdb
 from collections import defaultdict
@@ -50,7 +50,7 @@ class ImageDataset(Dataset):
         if self.transform is not None:
             for t in self.transform.transforms:
                 #pdb.set_trace()
-                if isinstance(t, RandomHorizontalFlip_rot):
+                if isinstance(t, RandomHorizontalFlip_custom):
                     img, flipped = t(img)
                 else:
                     img = t(img)
@@ -97,7 +97,7 @@ class ImageDataset_customSampling(Dataset):
         img_second = read_image(img_path_second)
         if self.transform is not None:
             for t in self.transform.transforms:
-                if isinstance(t, RandomHorizontalFlip_rot):
+                if isinstance(t, RandomHorizontalFlip_custom):
                     img_second, flipped = t(img_second)
                 else:
                     img_second = t(img_second)
